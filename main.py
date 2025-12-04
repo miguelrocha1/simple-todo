@@ -25,9 +25,9 @@ def main():
     if cmd == "list":
         manager.list_tasks()
     elif cmd == "add":
+        if sys.argv[2] == "--urgent":
+            manager.add_task(sys.argv[2])
         # TODO:
-        # 1. Verificar se o utilizador passou o argumento --urgent
-        # 2. Passar essa informação para o método add_task(...)
         # 3. Alterar o JSON para guardar um campo "urgent": true/false
         #
         # Atualmente o suporte a "urgent" NÃO está implementado.
