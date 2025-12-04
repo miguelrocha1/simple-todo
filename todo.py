@@ -28,11 +28,12 @@ class TodoManager:
         for i, t in enumerate(self.tasks, 1):
             status = "done" if t.get("done") else " "
             # TODO: mostrar também se a tarefa é 'urgent' quando implementado
+
             urgent = "(!)" if t.get("urgent") else ""
             created = t.get("created", "")
             print(f"{i}. [{status}] {t['description']} {urgent} - created: {created}")
 
-    def add_task(self, description):
+    def add_task(self, description, urgent=False):
         # TODO:
         # 1. Adicionar um novo parâmetro 'urgent=False' a esta função
         # 2. Guardar no dicionário da tarefa a chave 'urgent': urgent
@@ -41,6 +42,7 @@ class TodoManager:
             "description": description,
             "done": False,
             # 'urgent' não está presente - é aqui que os alunos devem adicionar
+            "urgent": urgent,
             "created": datetime.utcnow().isoformat() + "Z"
         }
         self.tasks.append(task)
