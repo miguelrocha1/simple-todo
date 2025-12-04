@@ -27,8 +27,6 @@ class TodoManager:
             return
         for i, t in enumerate(self.tasks, 1):
             status = "done" if t.get("done") else " "
-            # TODO: mostrar também se a tarefa é 'urgent' quando implementado
-
             urgent = "(!)" if t.get("urgent") else ""
             created = t.get("created", "")
             print(f"{i}. [{status}] {t['description']} {urgent} - created: {created}")
